@@ -23,7 +23,10 @@ public class GreetingService implements IGreetingService {
         return greetingRepository.save(new Greeting(counter.incrementAndGet(), message));
     }
 
-
+    @Override
+    public Greeting getGreetingById(long id) {
+        return greetingRepository.findById(id).get();
+    }
 
 
 }
